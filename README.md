@@ -61,6 +61,21 @@ For the old `finetune_trainer.py` and related utils, see [`examples/legacy/seq2s
 For custom datasets in `jsonlines` format please see: https://huggingface.co/docs/datasets/loading_datasets#json-files
 and you also will find examples of these below.
 
+## Pre-requisites
+
+Here is a list of dependencies you need to install:
+```bash
+!pip install transformers 
+
+pip install datasets
+
+pip install evaluate
+
+pip install accelerate -U
+
+pip install rouge_score
+```
+
 ## With Trainer
 
 Here is an example on a summarization task:
