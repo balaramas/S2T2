@@ -3425,7 +3425,7 @@ class SeamlessM4TForTextToSpeech(SeamlessM4TPreTrainedModel):
               sequence_length)`and and `waveform_lengths` which gives the length of each sample.
         """
         batch_size = len(input_ids) if input_ids is not None else len(kwargs.get("inputs_embeds"))
-
+        tgt_lang="hin"
         if tgt_lang is None:
             raise ValueError("You must specify a `tgt_lang` to generate translated speech.")
         else:
