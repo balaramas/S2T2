@@ -2781,7 +2781,7 @@ class SeamlessM4TForTextToText(SeamlessM4TPreTrainedModel):
     def generate(
         self,
         input_ids=None,
-        tgt_lang="hin",
+        tgt_lang=None,
         generation_config=None,
         logits_processor=None,
         stopping_criteria=None,
@@ -2885,7 +2885,7 @@ class SeamlessM4TForTextToText(SeamlessM4TPreTrainedModel):
             stopping_criteria,
             prefix_allowed_tokens_fn,
             synced_gpus,
-            decoder_input_ids=text_decoder_input_ids,
+            decoder_input_ids=torch.tensor([[self.generation_config.text_decoder_lang_to_code_id.get("hin")]] * batch_size).to(self.device),
             **kwargs,
         )
 
